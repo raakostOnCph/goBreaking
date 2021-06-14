@@ -16,19 +16,48 @@ public class Kilde
 
     public void tilknyt(Person person)
     {
+        if (! personList.contains(person)) {
+
         personList.add(person);
+        }
 
     }
 
-    public void udskrivAbonnenter() {
+    public String udskrivAbonnenter() {
+
+        String abonnenterString= "";
 
         for (Person person : personList) {
 
             System.out.println(person.navn);
 
+            abonnenterString = abonnenterString +" " + person.navn;
+
         }
 
+        return abonnenterString;
     }
+
+
+
+    public String udskrivAbonnenter(Person kunde) {    //overload ens metoder med forskellige parametre
+
+        String abonnenterString= "";
+
+        for (Person person : personList) {
+
+            if (!person.equals(kunde) ) {
+                System.out.println(person.navn);
+
+                abonnenterString = abonnenterString + " " + person.navn;
+            }
+        }
+
+        return abonnenterString;
+    }
+
+
+
 
     public void goBreaking(String besked){
 
@@ -38,5 +67,16 @@ public class Kilde
 
         }
 
+    }
+
+    public void fjernAbonnent(Person person)
+    {
+        personList.remove(person);
+
+    }
+
+    public int getAntalFølgere() {
+
+        return personList.size();
     }
 }

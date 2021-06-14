@@ -26,5 +26,21 @@ public class Main {
 
         politekken.goBreaking("Hunden har godt efter omstændighedderne");
 
+
+        peter.udskrivKilder();
+
+        peter.fjernKide(dr);
+        peter.abonner(politekken);
+
+        charlotte.abonner(politekken);
+
+        peter.udskrivKilder();
+
+        dr.goBreaking("det bliver en hot sommer ");
+
+        peter.følgerOgså(politekken);
+
+        System.out.println(politekken.getAntalFølgere());
+
     }
 }
